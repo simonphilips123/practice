@@ -1,0 +1,23 @@
+//to find character position in a string
+
+import java.util.*;
+
+class Main{
+    public static void main(String args[]){
+    String str="hello";
+    char find='h';
+    int ans=-1;
+    // int arr []=new int[];
+    for(int i=0;i<str.length();i++){
+        if (str.charAt(i)==find){
+            ans=i;
+            break;
+        }
+        
+    }
+    System.out.println(ans);
+    }
+}
+    
+    
+    

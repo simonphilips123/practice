@@ -1,0 +1,24 @@
+//to count how many times a character is repeated in a string
+
+import java.util.*;
+
+class Main{
+    public static void main(String args[]){
+    // String str="hello";
+    Scanner sc=new Scanner(System.in);
+    String str=sc.nextLine();
+    // String ch=sc.nextLine();
+    char ch=sc.next().charAt(0);
+    int count=0;
+    for(int i=0;i<str.length();i++){
+        if (ch==str.charAt(i)){
+            count++;
+        }
+    }
+    System.out.println(count);
+    
+    }
+}
+    
+    
+    

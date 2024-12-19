@@ -1,0 +1,18 @@
+## to find postive or negative number
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	   // int num=1;
+	   // int neg=-1;
+	    Scanner sc =new Scanner(System.in);
+	    int num=sc.nextInt();
+	    if(num>0){
+	        System.out.println("post");
+	    }
+	    else{
+		System.out.println("neg");
+	    }
+	}
+}

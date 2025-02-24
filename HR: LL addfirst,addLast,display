@@ -1,0 +1,63 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+public class Main
+{
+    class Node{
+      Node next;
+    String data;
+    Node(String data){
+        this.data=data;
+        this.next=null;
+    }
+    }
+    Node head;
+    
+    public void addfirst(String data){
+        Node newNode= new Node(data);
+        if(head==null){
+            head=newNode;
+            return;
+        }
+        newNode.next=head;
+        head=newNode;
+    }
+    
+      public void addlast(String data){
+        Node newNode= new Node(data);
+        if(head==null){
+            head=newNode;
+            return;
+        }
+        Node currNode=head;
+        //search for the end or traverse till end using loop
+        while(currNode.next!=null){
+        currNode=currNode.next;
+        }
+       currNode.next=newNode;
+    }
+    
+    public void display(){
+        Node currNode=head;
+        //search for the end or traverse till end using loop
+        while(currNode!=null){
+        System.out.print(currNode.data+"->");
+        currNode=currNode.next;
+        }
+        System.out.print("null");
+
+    }
+	public static void main(String[] args) {
+    Main list=new Main();
+    list.addfirst("a");
+    list.addfirst("b");
+    list.addlast("z");
+    list.display();
+    
+	}
+}

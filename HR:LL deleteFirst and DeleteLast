@@ -1,0 +1,88 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+public class Main
+{
+    class Node{
+        String data;
+        Node next;
+        
+        Node(String data){
+            this.data=data;
+            this.next=null;
+        }
+        //to create a Node
+    }
+            Node head;
+
+   public void addFirst(String data){
+        Node newNode= new Node(data);
+        if(head==null){
+            head=newNode;
+            return;
+        }
+        newNode.next=head;
+        head=newNode;
+    }
+    public void deleteFirst(){
+         if(head==null){
+            return;
+        }
+        head=head.next;
+    }
+     public void addLast(String data){
+        Node newNode= new Node(data);
+        if(head==null){
+            head=newNode;
+            return;
+        }
+        Node currNode=head;
+        while(currNode.next!=null){
+            currNode=currNode.next;//loop the current node till the last by using .next ons its null it come out of loop
+        }
+        currNode.next=newNode;
+    }
+        public void deleteLast(){
+         if(head==null){
+            return;
+        }
+        
+        //one more edge case where head.next is null return head = null so delete if there is a single Node
+         if(head.next==null){
+             head=null;
+            return;
+        }
+        Node secLast= head;
+        Node last=head.next;
+        while(last.next!=null){
+            last=last.next;       //traverse both the nodes!
+            secLast=secLast.next;
+        }
+        secLast.next=null;
+    }
+     public void display(){
+        Node currNode=head;
+        //search for the end or traverse till end using loop
+        while(currNode!=null){
+        System.out.print(currNode.data+"->");
+        currNode=currNode.next;
+        }
+        System.out.print("null");
+
+    }
+    
+	public static void main(String[] args) {
+		Main list=new Main();
+		list.addFirst("a");
+		list.addFirst("b");
+		list.display();
+		list.deleteLast();
+		list.display();
+
+	}
+}

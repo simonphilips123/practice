@@ -1,0 +1,43 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+import java.io.*;
+import java.util.*;
+
+interface AdvancedArithmetic{
+ int divisorsum(int n);
+}
+
+
+class Calculator implements AdvancedArithmetic{
+    
+    public int divisorsum(int n){
+        
+        int sum=0;
+        for(int i=1;i<=n;i++){
+            if(n%i==0){
+                sum+=i;
+            }
+        }
+        return sum;
+}
+    
+}
+
+
+public class Main
+{
+	public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+    sc.close();
+    Calculator obj=new Calculator();
+    int sum=obj.divisorsum(n);
+    System.out.println(sum);
+	}
+}

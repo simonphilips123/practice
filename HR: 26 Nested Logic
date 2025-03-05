@@ -1,0 +1,40 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    
+public int fine_calc(int day, int month, int year, int due_day, int due_month, int due_year) {
+       if (year > due_year) {
+        return 10000;  // Full fine if returned in a later year
+    } else if (year == due_year && month > due_month) {
+        return 500 * (month - due_month); // Fine per month if returned late within the same year
+    } else if (year == due_year && month == due_month && day > due_day) {
+        return 15 * (day - due_day); // Fine per day if returned late in the same month
+    }
+    return 0; // No fine if returned on time or earlier
+}
+    
+	public static void main(String[] args) {
+// 	int fine=0;
+	Scanner sc =new Scanner(System.in);
+	//nested conditional statements
+	// System.out.println("enter the date returned day:\t month:\t year:");
+	int day=sc.nextInt();
+	int month=sc.nextInt();
+	int year=sc.nextInt();
+	// System.out.println(day+" "+month+" "+year);
+	// System.out.println("enter the due date:\t month:\t year:");
+	int due_day=sc.nextInt();
+	int due_month=sc.nextInt();
+	int due_year=sc.nextInt();
+	// System.out.println(due_day+" "+due_month+" "+due_year);
+    
+    // int day_diff=day-due_day;
+    // int month_diff=month-due_month;
+    // int year_diff=year-due_year;
+    
+    Solution obj=new Solution();
+    int ans = obj.fine_calc(day, month, year, due_day, due_month, due_year);
+    System.out.println(ans);
+	}
+}

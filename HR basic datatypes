@@ -1,0 +1,21 @@
+#Given the participants' score sheet for your University Sports Day, you are required to find the runner-up score. You are given  scores. Store them in a list and find the score of the runner-up.
+
+n = int(input())
+# n=(1,22,3,4,5)
+arr = list(map(int, input().split()))[:n]
+print(arr)
+maxi=max(arr)
+print(maxi)
+#list comprehension
+arr= [x for x in arr if x!=maxi]
+runnerup=max(arr)
+print(runnerup)
+
+# for i in range(n):
+#     # print(i)
+#     print(arr[i],"**")
+#     if arr[i]==maxi:
+#         print(arr[i])
+        
+# #         maxi-=maxi
+# #         print(maxi)
